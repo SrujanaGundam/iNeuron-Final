@@ -69,13 +69,13 @@ def load_artifacts():  #opening the folder to acces model
     global __weather_encoder
 
 
-    with open("./artifacts/weather.json","r") as f:
+    with open("artifacts/weather.json","r") as f:
         __weather_encoder=json.load(f)
 
 
     global __model
     if __model is None:
-        with gzip.open("./artifacts/saved_model.pkl","rb") as f:
+        with gzip.open("artifacts/saved_model.pkl","rb") as f:
             p = pickle.Unpickler(f)
             __model = p.load()
     print("loading saved artifacts..done")
